@@ -337,7 +337,7 @@ static struct kernel_param_ops module_ops = {
 	.get = param_get_bool,
 };
 
-module_param_cb(enabled, &module_ops, &enabled, 0644);
+module_param_cb(enabled, &module_ops, &enabled, 0664);
 MODULE_PARM_DESC(enabled, "enforce thermal limit on cpu");
 
 static ssize_t show_thermal_stats(struct kobject *kobj,
