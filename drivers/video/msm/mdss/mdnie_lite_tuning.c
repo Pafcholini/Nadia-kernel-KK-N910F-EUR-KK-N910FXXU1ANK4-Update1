@@ -146,17 +146,17 @@ const char scenario_name[MAX_mDNIe_MODE][16] = {
 };
 
 const char background_name[MAX_BACKGROUND_MODE][10] = {
-	"DYNAMIC",
+	"0",
 #if defined(CONFIG_MDNIE_LITE_CONTROL)
     "CONTROL",
 #else
-	"STANDARD",
+	"1",
 #endif
 #if !defined(CONFIG_SUPPORT_DISPLAY_OCTA_TFT)
-	"NATURAL",
+	"2",
 #endif
-	"MOVIE",
-	"AUTO",
+	"3",
+	"4",
 };
 
 const char outdoor_name[MAX_OUTDOOR_MODE][20] = {
@@ -470,10 +470,10 @@ void is_play_speed_1_5(int enable)
 static ssize_t mode_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
 {
-	DPRINT("Current Background Mode : %s\n",
+	DPRINT("%s\n",
 		background_name[mdnie_tun_state.background]);
 
-	return snprintf(buf, 256, "Current Background Mode : %s\n",
+	return snprintf(buf, 256, "%s\n",
 		background_name[mdnie_tun_state.background]);
 }
 
