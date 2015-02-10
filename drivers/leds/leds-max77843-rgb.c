@@ -438,7 +438,6 @@ static ssize_t store_max77843_rgb_lowpower(struct device *dev,
     max77843_rgb_set_state(&max77843_rgb->led[RED], led_dynamic_current, LED_BLINK);
     max77843_rgb_set_state(&max77843_rgb->led[GREEN], led_dynamic_current, LED_BLINK);
     max77843_rgb_set_state(&max77843_rgb->led[BLUE], led_dynamic_current, LED_BLINK);
-
 	pr_info("led_lowpower mode set to %i, led_dynamic_current set to %d\n", led_lowpower, led_dynamic_current);
 	dev_dbg(dev, "led_lowpower mode set to %i\n", led_lowpower);
 
